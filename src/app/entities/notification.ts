@@ -1,5 +1,6 @@
 import { Replace } from 'src/helpers/replace';
 import { Content } from './content';
+import { BaseEntity } from './base-entity';
 
 export interface NotificationProps {
   recipientId: string;
@@ -14,10 +15,12 @@ export type CreateNotificationProps = Replace<
   { createdAt?: Date }
 >;
 
-export class Notification {
+export class Notification extends BaseEntity {
   private props: NotificationProps;
 
   constructor(props: CreateNotificationProps) {
+    super();
+
     this.props = {
       ...props,
       createdAt: props.createdAt ?? new Date(),
