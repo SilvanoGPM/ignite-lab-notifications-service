@@ -1,4 +1,4 @@
-import { Replace } from 'src/helpers/replace';
+import { Replace } from '@helpers/replace';
 import { Content } from './content';
 import { BaseEntity } from './base-entity';
 
