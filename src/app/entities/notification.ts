@@ -7,6 +7,7 @@ export interface NotificationProps {
   content: Content;
   category: string;
   readtAt?: Date | null;
+  canceledAt?: Date | null;
   createdAt: Date;
 }
 
@@ -57,6 +58,14 @@ export class Notification extends BaseEntity {
 
   public get readtAt(): Date | undefined | null {
     return this.props.readtAt;
+  }
+
+  public get canceledAt(): Date | undefined | null {
+    return this.props.canceledAt;
+  }
+
+  public cancel() {
+    this.props.canceledAt = new Date();
   }
 
   public get createdAt() {
