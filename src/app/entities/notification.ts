@@ -19,8 +19,8 @@ export type CreateNotificationProps = Replace<
 export class Notification extends BaseEntity {
   private props: NotificationProps;
 
-  constructor(props: CreateNotificationProps) {
-    super();
+  constructor(props: CreateNotificationProps, id?: string) {
+    super(id);
 
     this.props = {
       ...props,
